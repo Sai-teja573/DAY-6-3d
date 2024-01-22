@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated TEJA Logo</title>
+<style>
+/* Variables */
+:root {
+  --tcs-blue: #00aeef;
+  --tcs-white: #FFFFFF;
+  --tcs-yellow: #e6ff06;
+  --tcs-red: #ff0000;
+  --tcs-green: #00ff00;
+  --tcs-pink:#f900f0 ;
+    --tcs-orange: #ff6600;
+    --tcs-black: #000000;
+
+  
+  --unit: 1vw;
+  --size: 3;
+  --box-size: calc(var(--size) * var(--unit));
+  --box-border: calc(var(--size) / 5 * var(--unit));
+  --box-border-radius: calc(var(--size) / 3 * var(--unit));
+  --margin: max(calc(var(--size) / 15), 0.1);
+}
+
+/* Base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+#container {
+  display: flex;
+  gap: var(--margin);
+}
+
+#animated-logo {
+  display: flex;
+  gap: var(--margin);
+}
+
+.square {
+  width: var(--box-size);
+  height: var(--box-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--tcs-white);
+  border: var(--box-border) solid var(--tcs-white);
+  border-radius: var(--box-border-radius);
+  animation: falling-box 6s ease-out infinite;
+}
+
+/* Colors for letters */
+#l { border-color: var(--tcs-blue); }
+#o { border-color: var(--tcs-white); }
+#a { border-color: var(--tcs-red); }
+#d { border-color: var(--tcs-orange); }
+#i { border-color: var(--tcs-yellow); }
+#n { border-color: var(--tcs-green); }
+#g { border-color: var(--tcs-pink); }
+#z { border-color: var(--tcs-black); }
+#x { border-color: var(--tcs-black); }
+#c { border-color: var(--tcs-black); }
+
+
+/* Keyframes for the animation */
+@keyframes falling-box {
+  0%, 71% { transform: scale(0,0); }
+  1% { transform: scale(1.16,1.16); }
+  2%, 69% { transform: scale(1,1); }
+  70% { transform: scale(1.16,1.16); }
+}
+
+/* Animation delay for each square */
+#t { animation-delay: 0s; }
+#e { animation-delay: 0.2s; }
+#j { animation-delay: 0.4s; }
+#a { animation-delay: 0.6s; }
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="animated-logo">
+    <div class="square" id="l">L</div>
+    <div class="square" id="o">O</div>
+    <div class="square" id="a">A</div>
+    <div class="square" id="d">D</div>
+    <div class="square" id="i">I</div>
+    <div class="square" id="n">N</div>
+    <div class="square" id="g">G</div>
+    <div class="square" id="z">.</div>
+    <div class="square" id="x">.</div>
+    <div class="square" id="c">.</div>
+  </div>
+</div>
+</body>
+</html>
